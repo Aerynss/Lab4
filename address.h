@@ -1,11 +1,8 @@
 #pragma once
-#include <iostream>
 class address
 {
-private:
-	std::string bank_address;
 public:
+	char bank_address[1000];
 	address();
-	address(std::string);
 };
 

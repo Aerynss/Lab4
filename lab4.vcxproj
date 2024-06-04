@@ -22,14 +22,21 @@
     <ClInclude Include="address.h" />
     <ClInclude Include="bank.h" />
     <ClInclude Include="exchange_rate.h" />
+    <ClInclude Include="file_reader.h" />
+    <ClInclude Include="filter.h" />
     <ClInclude Include="operations.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="address.cpp" />
     <ClCompile Include="bank.cpp" />
     <ClCompile Include="exchange_rate.cpp" />
+    <ClCompile Include="file_reader.cpp" />
+    <ClCompile Include="filter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

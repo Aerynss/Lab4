@@ -30,6 +30,12 @@
     <ClInclude Include="exchange_rate.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="file_reader.h">
+      <Filter>Основные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="filter.h">
+      <Filter>Основные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bank.cpp">
@@ -47,5 +53,16 @@
     <ClCompile Include="main.cpp">
       <Filter>Основные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="file_reader.cpp">
+      <Filter>Основные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="filter.cpp">
+      <Filter>Основные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
 </Project>

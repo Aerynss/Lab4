@@ -2,10 +2,10 @@
 #include <iostream>
 class bank
 {
-private:
-	std::string bank_name;
 public:
+	std::string bank_name;
 	bank();
 	bank(std::string);
+	bool operator==(const bank& _bank);
 };
 

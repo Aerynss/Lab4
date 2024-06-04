@@ -4,13 +4,13 @@
 #include "operations.h"
 class exchange_rate
 {
-private:
+public:
 	bank some_bank;
 	operations bying;
 	operations selling;
 	address some_address;
-public:
 	exchange_rate();
 	exchange_rate(bank, operations bying, operations selling, address);
 };
+
 

@@ -1,10 +1,10 @@
 #pragma once
 class operations
 {
-private:
-	double some_oper;
 public:
+	double some_oper;
 	operations();
 	operations(double);
+	bool operator<(const operations& oper);
 };
 
