@@ -11,7 +11,7 @@ void read_file(const char* file_name, exchange_rate* array[], int& size)
         {
             exchange_rate* item = new exchange_rate;
             file >> item->some_bank.bank_name;
-            file >> item->bying.some_oper;
+            file >> item->buying.some_oper;
             file >> item->selling.some_oper;
             file.read(tmp_buffer, 1); // чтения лишнего символа пробела
             file.getline(item->some_address.bank_address, 1000);

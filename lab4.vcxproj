@@ -25,6 +25,7 @@
     <ClInclude Include="file_reader.h" />
     <ClInclude Include="filter.h" />
     <ClInclude Include="operations.h" />
+    <ClInclude Include="processing.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="address.cpp" />
@@ -34,6 +35,7 @@
     <ClCompile Include="filter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations.cpp" />
+    <ClCompile Include="process.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />

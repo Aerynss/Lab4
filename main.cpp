@@ -1,5 +1,6 @@
 #include "file_reader.h"
 #include "filter.h"
+#include "processing.h"
 #include <Windows.h>
 using namespace std;
 int main()
@@ -14,7 +15,7 @@ int main()
         for (int i = 0; i < size; i++)
         {
             cout << "Банк: ";
-            cout << rate[i]->some_bank.bank_name << "\nПокупка/Продажа:\n" << rate[i]->bying.some_oper << " " << rate[i]->selling.some_oper;
+            cout << rate[i]->some_bank.bank_name << "\nПокупка/Продажа:\n" << rate[i]->buying.some_oper << " " << rate[i]->selling.some_oper;
             cout << "\nАдрес банка: " << rate[i]->some_address.bank_address <<"\n\n";
         }
         bank* temp = new bank;
@@ -25,6 +26,10 @@ int main()
         operations* otemp = new operations;
         cin >> otemp->some_oper;
         better_value(rate, *otemp, size);
+        int num;
+        cout << "Введите номер филиала: ";
+        cin >> num;
+        cout << "Разница между покупкой и продажей = " << process(rate, size, num - 1);
         for (int i = 0; i < size; i++)
         {
             delete rate[i];

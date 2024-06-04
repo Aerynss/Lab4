@@ -16,6 +16,9 @@
     <Filter Include="Основные файлы">
       <UniqueIdentifier>{af56a0f0-5272-4c4f-b9b8-73d34fe6358e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Process">
+      <UniqueIdentifier>{a33597be-8450-4752-8bca-cf5d4d2ce0f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bank.h">
@@ -35,6 +38,9 @@
     </ClInclude>
     <ClInclude Include="filter.h">
       <Filter>Основные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="processing.h">
+      <Filter>Process</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="filter.cpp">
       <Filter>Основные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="process.cpp">
+      <Filter>Process</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

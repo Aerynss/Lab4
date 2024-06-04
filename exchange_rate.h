@@ -6,11 +6,11 @@ class exchange_rate
 {
 public:
 	bank some_bank;
-	operations bying;
+	operations buying;
 	operations selling;
 	address some_address;
 	exchange_rate();
-	exchange_rate(bank, operations bying, operations selling, address);
+	exchange_rate(bank, operations buying, operations selling, address);
 };
 
 
