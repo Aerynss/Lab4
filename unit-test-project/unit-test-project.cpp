@@ -2,6 +2,14 @@
 #include "CppUnitTest.h"
 #include "..\Lab4\processing.h"
 #include "..\Lab4\exchange_rate.h"
+#include "..\Lab4\exchange_rate.cpp"
+#include "..\Lab4\address.h"
+#include "..\Lab4\bank.h"
+#include "..\Lab4\operations.h"
+#include "..\Lab4\address.cpp"
+#include "..\Lab4\bank.cpp"
+#include "..\Lab4\operations.cpp"
+#pragma warning(disable:4996)
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -14,6 +22,7 @@ namespace unittestproject
 		temp->buying.some_oper = _buying_;
 		temp->selling.some_oper = _selling_;
 		strcpy(temp->some_address.bank_address, _address_);
+		return temp;
 	}
 
 	//       
@@ -33,9 +42,9 @@ namespace unittestproject
 		TEST_METHOD(TestMethod1) //     
 		{
 			exchange_rate* rates[3];
-			rates[0] = build_rate("Беларусбанк", 10, 2, "г.Витебск пр.Московский д.54"); 
-			rates[1] = build_rate("Беларусбанк", 10, 2.9, "г.Витебск пр.Московский д.54"); 
-			rates[2] = build_rate("Беларусбанк", 9, 2.4, "г.Витебск пр.Московский д.54"); 
+			rates[0] = build_rate("Беларусбанк", 10., 2., "г.Витебск пр.Московский д.54"); 
+			rates[1] = build_rate("Беларусбанк", 10., 2.9, "г.Витебск пр.Московский д.54"); 
+			rates[2] = build_rate("Беларусбанк", 9., 2.4, "г.Витебск пр.Московский д.54"); 
 			Assert::AreEqual(7., process(rates, 3, 0));
 			delete_rate(rates, 3);
 		}
@@ -43,9 +52,9 @@ namespace unittestproject
 		TEST_METHOD(TestMethod2) //        
 		{
 			exchange_rate* rates[3];
-			rates[0] = build_rate("Беларусбанк", 10, 2, "г.Витебск ул.Смоленская д.21"); // 15 
-			rates[1] = build_rate("Беларусбанк", 10, 2.9, "г.Витебск ул.Смоленская д.21"); // 19 
-			rates[2] = build_rate("Беларусбанк", 9, 2.4, "г.Витебск ул.Смоленская д.21"); // 14 
+			rates[0] = build_rate("Беларусбанк", 10., 2., "г.Витебск ул.Смоленская д.21"); // 15 
+			rates[1] = build_rate("Беларусбанк", 10., 2.9, "г.Витебск ул.Смоленская д.21"); // 19 
+			rates[2] = build_rate("Беларусбанк", 9., 2.4, "г.Витебск ул.Смоленская д.21"); // 14 
 			Assert::AreEqual(19., process(rates, 3, 1));
 			delete_rate(rates, 3);
 		}
@@ -53,9 +62,9 @@ namespace unittestproject
 		TEST_METHOD(TestMethod3) //         
 		{
 			exchange_rate* rates[3];
-			rates[0] = build_rate("Беларусбанк", 10, 2, "г.Витебск ул.Смоленская д.213"); // 11 
-			rates[1] = build_rate("Беларусбанк", 10, 2.9, "г.Витебск ул.Смоленская д.213"); // 11 
-			rates[2] = build_rate("Беларусбанк", 9, 2.4, "г.Витебск ул.Смоленская д.213"); // 10 
+			rates[0] = build_rate("Беларусбанк", 10., 2., "г.Витебск ул.Смоленская д.213"); // 11 
+			rates[1] = build_rate("Беларусбанк", 10., 2.9, "г.Витебск ул.Смоленская д.213"); // 11 
+			rates[2] = build_rate("Беларусбанк", 9., 2.4, "г.Витебск ул.Смоленская д.213"); // 10 
 			Assert::AreEqual(6.6, process(rates, 3, 2));
 			delete_rate(rates, 3);
 		}
