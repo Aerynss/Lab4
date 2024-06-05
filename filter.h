@@ -1,4 +1,51 @@
-#pragma once
-#include "exchange_rate.h"
-void only_one_bank(exchange_rate* array[], bank find_bank, int size);
-void better_value(exchange_rate* array[], operations find_value, int size);
+#ifndef FILTER_H
+#define FILTER_H
+#include "exchange_rates.h"
+
+exchange_rates** filter (
+    exchange_rates* array[],
+    int size,
+    bool (*check)(exchange_rates* element),
+    int& result_size
+    );
+
+/*
+ОПИСАНИЕ ФУНКЦИИ <function_name>:
+    функция перебирает массив с исходными данными и все указатели на элементы,
+    для которых функция отбора возвращает значение true, помещаются в новый
+    массив, указатель на который возвращается функцией
+
+ПАРАМЕТРЫ:
+    array       - массив с исходными данными
+    size        - размер массива с исходными данными
+    check       - указатель на функцию отбора.
+                  В качестве значения этого параметра можно передать имя
+                  функции отбора, прототип которой приведён ниже
+    result_data - параметр, передаваемый по ссылке - переменная, в которую
+                  функция запишет размер результирующего массива
+
+ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ
+    указатель на массив из указателей на элементы, удовлетворяющие условию
+    отбора (для которых функция отбора возвращает true)
+*/
+
+
+bool check_by_name(
+    exchange_rates* element
+    );
+
+bool check_by_sell(
+    exchange_rates* element
+);
+
+/*
+ОПИСАНИЕ ФУНКЦИИ <check_function_name>:
+    функция отбора - проверяет, удовлетворяет ли один элемент условию отбора
+
+ПАРАМЕТРЫ:
+    element - указатель на элемент, который нужно проверить
+
+ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ
+    true, если элемент удовлетворяет условию отбора, и false в ином случае
+*/
+#endif

@@ -1,3 +1,8 @@
-#pragma once
-#include "exchange_rate.h"
-void read_file(const char* file_name, exchange_rate* array[], int& size);
+#ifndef FILE_READER_H
+#define FILE_READER_H
+
+#include "exchange_rates.h"
+
+void read(const char* file_name, exchange_rates* array[], int& size);
+
+#endif

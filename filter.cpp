@@ -1,25 +1,30 @@
 #include "filter.h"
-void only_one_bank(exchange_rate* array[], bank find_bank, int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		if (array[i]->some_bank == find_bank)
-		{
-			std::cout << "Банк: ";
-			std::cout << array[i]->some_bank.bank_name << "\nПокупка/Продажа:\n" << array[i]->buying.some_oper << " " << array[i]->selling.some_oper;
-			std::cout << "\nАдрес банка: " << array[i]->some_address.bank_address << "\n\n";
-		}
-	}
+#include <cstring>
+#include <iostream>
+
+exchange_rates** filter(
+    exchange_rates* array[],
+    int size,
+    bool (*check)(exchange_rates* element),
+    int& result_size
+) {
+    exchange_rates** result = new exchange_rates * [size];
+    result_size = 0;
+    for (int i = 0; i < size; ++i) {
+        if (check(array[i])) {
+            result[result_size++] = array[i];
+        }
+    }
+    return result;
 }
-void better_value(exchange_rate* array[], operations find_value, int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		if (array[i]->selling < find_value)
-		{
-			std::cout << "Банк: ";
-			std::cout << array[i]->some_bank.bank_name << "\nПокупка/Продажа:\n" << array[i]->buying.some_oper << " " << array[i]->selling.some_oper;
-			std::cout << "\nАдрес банка: " << array[i]->some_address.bank_address << "\n\n";
-		}
-	}
+
+bool check_by_name(
+    exchange_rates* element
+) {
+    return strcmp(element->bank.name, "Беларусбанк") == 0;
+}
+bool check_by_sell(
+    exchange_rates* element
+) {
+    return element->exchange.sell < 2.5;
 }
